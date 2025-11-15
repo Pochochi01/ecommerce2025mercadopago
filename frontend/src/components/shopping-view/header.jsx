@@ -10,7 +10,7 @@ import { logoutUser } from "@/store/auth-slice";
 import UserCartWrapper from "./cartWrapper";
 import { useEffect, useState } from "react";
 import { fetchCartItems } from "@/store/shop/cartSlice";
-import logoMenu from '../../assets/logo.png'
+import logoMenu from '../../assets/Logo.png'
 import { Label } from "../ui/label";
 
 
