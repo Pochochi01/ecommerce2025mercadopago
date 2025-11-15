@@ -1,7 +1,3 @@
-
-import compuertaCamioneta from '../../assets/Hero/compuertaCamioneta.png'
-import gym from '../../assets/Hero/gym.png'
-import bolsa from '../../assets/Hero/bolsa.png'
 import { ShirtIcon } from 'lucide-react'
 import { Card, CardContent } from '@/components/ui/card'
 import { useEffect, useState } from 'react'
