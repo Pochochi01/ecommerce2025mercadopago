@@ -36,7 +36,7 @@ const createOrder = async (req, res) => {
     body:{
       items,
       back_urls: {
-        success: "https://d99f04fe9dc6.ngrok-free.app/shop/mercadoPagoReturn",
+        success: "https://localhost:5173/shop/mercadoPagoReturn",
         failure: "http://localhost:5173/shop/mercadopago-failure",
         pending: "http://localhost:5173/shop/mercadopago-pending",
       },

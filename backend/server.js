@@ -28,15 +28,15 @@ const app = express();
 
 const PORT = process.env.PORT || 5000;
 
-const allowedOrigins = [
+/*const allowedOrigins = [
   "http://localhost:5173",
   "https://d99f04fe9dc6.ngrok-free.app",
-];
+];*/
 
 app.use(
   cors({
-    //origin : 'http://localhost:5173', agrego allowedOrigin para probar con mercadopago
-
+    origin : 'http://localhost:5173',
+/*
     origin: function (origin, callback) {
       if (!origin || allowedOrigins.includes(origin)) {
         callback(null, true);
@@ -44,7 +44,7 @@ app.use(
         callback(new Error("Not allowed by CORS"));
       }
     },
-
+*/
     methods: ["GET", "POST", "PUT", "DELETE"],
     allowedHeaders: [
       "Content-Type",
@@ -57,19 +57,19 @@ app.use(
   })
 );
 
-//ngrok
+/*ngrok
 app.use((req, res, next) => {
   res.setHeader('ngrok-skip-browser-warning', 'true');
   next();
-});
+});*/
 
 app.use(cookieParser());
 app.use(express.json());
 
 app.use("/api/auth", authRouter);
-
 app.use("/api/admin/products", adminProductsRouter);
 app.use("/api/admin/orders", adminOrderRouter);
+
 
 app.use("/api/shop/products", shopProductsRouter);
 app.use("/api/shop/cart", shopCartRouter);
