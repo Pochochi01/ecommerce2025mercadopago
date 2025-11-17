@@ -23,7 +23,7 @@ export const loginUser = createAsyncThunk(
     "/auth/login",
     async (formData) => {
       const response = await axios.post(
-        "http://localhost:5000/api/auth/login",
+        "http://sendasalud.cloud/api/auth/login",
         formData,
         { withCredentials: true }
       );
@@ -48,7 +48,7 @@ export const loginUser = createAsyncThunk(
     "/auth/checkauth",
     async () => {
       const response = await axios.get(
-        "http://localhost:5000/api/auth/checkauth",
+        "http://sendasalud.cloud/api/auth/checkauth",
         {
             withCredentials: true,
             headers:{

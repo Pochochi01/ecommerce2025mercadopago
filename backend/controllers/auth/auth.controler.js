@@ -1,11 +1,10 @@
-const bcrypt = require("bycryptjs");
+const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const User = require("../../models/user.models.js");
 
 //register
 const registerUser = async (req, res) => {
   const { userName, email, password } = req.body;
-
   try {
     const checkUser = await User.findOne({ email });
     if (checkUser)
