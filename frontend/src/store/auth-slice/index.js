@@ -11,7 +11,7 @@ export const registerUser = createAsyncThunk(
   "/auth/register",
   async (formData) => {
     const response = await axios.post(
-      "http://localhost:5000/api/auth/register",
+      "http://31.97.85.19:5000/api/auth/register",
       formData,
       { withCredentials: true }
     );
@@ -23,7 +23,7 @@ export const loginUser = createAsyncThunk(
     "/auth/login",
     async (formData) => {
       const response = await axios.post(
-        "http://sendasalud.cloud/api/auth/login",
+        "http://31.97.85.19:5000/api/auth/login",
         formData,
         { withCredentials: true }
       );
@@ -34,7 +34,7 @@ export const loginUser = createAsyncThunk(
   export const logoutUser = createAsyncThunk('/auth/logout',
 
     async ()=>{
-      const response = await axios.post('http://localhost:5000/api/auth/logout',
+      const response = await axios.post('http://31.97.85.19:5000/api/auth/logout',
         {},
         {
           withCredentials: true,
@@ -48,7 +48,7 @@ export const loginUser = createAsyncThunk(
     "/auth/checkauth",
     async () => {
       const response = await axios.get(
-        "http://sendasalud.cloud/api/auth/checkauth",
+        "http://31.97.85.19:5000/api/auth/checkauth",
         {
             withCredentials: true,
             headers:{

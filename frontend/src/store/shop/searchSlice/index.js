@@ -8,7 +8,7 @@ const initialState = {
 }
 
 export const getSearchResults = createAsyncThunk('/search/getSearchResults', async(keyword)=>{
-    const response = await axios.get(`http://localhost:5000/api/shop/search/${keyword}`);
+    const response = await axios.get(`http://31.97.85.19:5000/api/shop/search/${keyword}`);
     console.log(response, 'respuesta')
     return response.data;
 })

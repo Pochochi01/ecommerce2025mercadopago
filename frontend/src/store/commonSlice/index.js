@@ -8,12 +8,12 @@ const initialState = {
 }
 
 export const getFeatureImages = createAsyncThunk('/order/getFeatureImages', async()=>{
-    const response = await axios.get(`http://localhost:5000/api/common/feature/get`);
+    const response = await axios.get(`http://31.97.85.19:5000/api/common/feature/get`);
     return response.data;
 })
 
 export const addFeatureImage = createAsyncThunk('/order/addFeatureImage', async(image)=>{
-    const response = await axios.post(`http://localhost:5000/api/common/feature/add`, {image});
+    const response = await axios.post(`http://31.97.85.19:5000/api/common/feature/add`, {image});
     return response.data;
 })
 

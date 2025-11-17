@@ -7,17 +7,17 @@ const initialState = {
 }
 
 export const getAllOrdersForAdmin = createAsyncThunk('/order/getAllOrdersForAdmin', async()=>{
-    const response = await axios.get('http://localhost:5000/api/admin/orders/get');
+    const response = await axios.get('http://31.97.85.19:5000/api/admin/orders/get');
     return response.data
 })
 
 export const getOrdersDetailsForAdmin = createAsyncThunk('/order/getOrdersDetailsForAdmin', async(id)=>{
-    const response = await axios.get(`http://localhost:5000/api/admin/orders/details/${id}`);
+    const response = await axios.get(`http://31.97.85.19:5000/api/admin/orders/details/${id}`);
     return response.data
 })
 
 export const updateOrderStatus = createAsyncThunk('/order/updateOrderState', async({id, orderStatus})=>{
-    const response = await axios.put(`http://localhost:5000/api/admin/orders/update/${id}`,{orderStatus});
+    const response = await axios.put(`http://31.97.85.19:5000/api/admin/orders/update/${id}`,{orderStatus});
     return response.data
 })
 

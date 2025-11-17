@@ -15,7 +15,7 @@ export const fetchAllFilteredProducts = createAsyncThunk(
             ...filterParams,
             sortBy: sortParams
         })
-        const result = await axios.get(`http://localhost:5000/api/shop/products/getProducts?${query}`)
+        const result = await axios.get(`http://31.97.85.19:5000/api/shop/products/getProducts?${query}`)
         return result?.data
     }
 )
@@ -24,7 +24,7 @@ export const fetchProductDetails = createAsyncThunk(
     '/products/fetchProductDetails',
     async (id) => {
         
-        const result = await axios.get(`http://localhost:5000/api/shop/products/getProducts/${id}`)
+        const result = await axios.get(`http://31.97.85.19:5000/api/shop/products/getProducts/${id}`)
         return result?.data
     }
 )
