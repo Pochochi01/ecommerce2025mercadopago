@@ -28,11 +28,6 @@ const app = express();
 
 const PORT = process.env.PORT || 5000;
 
-/*const allowedOrigins = [
-  "http://localhost:5173",
-  "https://d99f04fe9dc6.ngrok-free.app",
-];*/
-
 app.use(
   cors({
     origin : 'http://sendasalud.cloud',
