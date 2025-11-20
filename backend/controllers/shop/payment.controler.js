@@ -36,9 +36,9 @@ const createOrder = async (req, res) => {
     body:{
       items,
       back_urls: {
-        success: "https://localhost:5173/shop/mercadoPagoReturn",
-        failure: "http://localhost:5173/shop/mercadopago-failure",
-        pending: "http://localhost:5173/shop/mercadopago-pending",
+        success: "https://sendasalud.cloud/shop/mercadoPagoReturn",
+        failure: "http://sendasalud.cloud/shop/mercadopago-failure",
+        pending: "http://sendasalud.cloud/shop/mercadopago-pending",
       },
       auto_return: "approved",
       external_reference: userId,
