@@ -12,22 +12,22 @@ const initialState = {
 }
 
 export const createNewPayment = createAsyncThunk('/payment/createNewPayment', async(orderData)=>{
-    const response = await axios.post('http://31.97.85.19:5000/api/shop/payment/create', orderData);
+    const response = await axios.post(`${API}/api/shop/payment/create`, orderData);
     return response.data
 })
 
 export const capturePayment = createAsyncThunk('/payment/capturePayment', async({paymentId, payerId, orderId})=>{
-    const response = await axios.post('http://31.97.85.19:5000/api/shop/payment/capture', {paymentId, payerId, orderId});
+    const response = await axios.post(`${API}/api/shop/payment/capture`, {paymentId, payerId, orderId});
     return response.data
 })
 
 export const getAllOrdersByUserId = createAsyncThunk('/payment/getAllOrdersByUserId', async(userId)=>{
-    const response = await axios.get(`http://31.97.85.19:5000/api/shop/payment/list/${userId}`);
+    const response = await axios.get(`${API}/api/shop/payment/list/${userId}`);
     return response.data
 })
 
 export const getOrderDetails = createAsyncThunk('/payment/getOrderDetails', async(id)=>{
-    const response = await axios.get(`http://31.97.85.19:5000/api/shop/payment/details/${id}`);
+    const response = await axios.get(`${API}/api/shop/payment/details/${id}`);
     return response.data
 })
 

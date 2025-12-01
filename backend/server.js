@@ -2,6 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cookieParser = require("cookie-parser");
 const cors = require("cors");
+require('dotenv').config();
 
 const authRouter = require("./routes/auth/auth.routes.js");
 
@@ -18,9 +19,7 @@ const shopReviewRouter = require("./routes/shop/review.routes.js");
 const commonFeatureRouter = require("./routes/common/feature.routes.js");
 
 mongoose
-  .connect(
-    "mongodb+srv://largomauroandres:JatSport123@cluster0.nfjve.mongodb.net/"
-  )
+  .connect(process.env.MONGO_URI)
   .then(() => console.log("MongoDB Conenected"))
   .catch((error) => console.log(error));
 
@@ -30,7 +29,7 @@ const PORT = process.env.PORT || 5000;
 
 app.use(
   cors({
-    origin : 'http://sendasalud.cloud',
+    origin : [process.env.CLIENT_URI],
     methods: ["GET", "POST", "PUT", "DELETE"],
     allowedHeaders: [
       "Content-Type",
@@ -42,12 +41,6 @@ app.use(
     credentials: true,
   })
 );
-
-/*ngrok
-app.use((req, res, next) => {
-  res.setHeader('ngrok-skip-browser-warning', 'true');
-  next();
-});*/
 
 app.use(cookieParser());
 app.use(express.json());

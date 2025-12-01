@@ -7,7 +7,7 @@ const initialState = {
 }
 
 export const getAllOrdersForAdmin = createAsyncThunk('/order/getAllOrdersForAdmin', async()=>{
-    const response = await axios.get('http://31.97.85.19:5000/api/admin/orders/get');
+    const response = await axios.get(`${API}/api/admin/orders/get');
     return response.data
 })
 
