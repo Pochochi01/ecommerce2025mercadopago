@@ -46,7 +46,7 @@ const ProductImageUpload = ({
         setImageLoadingState(true);
         const data = new FormData();
         data.append('myfile',imageFile);
-        const response = await axios.post(`${API}/api/admin/products/uploadImage', data)
+        const response = await axios.post(`${API}/api/admin/products/uploadImage`, data)
         if(response.data?.success) {
             setUploadedImageUrl(response.data.result.url);
             setImageLoadingState(false);
