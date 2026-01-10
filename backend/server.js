@@ -31,7 +31,7 @@ const PORT = process.env.PORT || 5000;
 
 app.use(
   cors({
-    origin : "https://sendasalud.cloud/",
+    origin : ["https://sendasalud.cloud/"],
     methods: ["GET", "POST", "PUT", "DELETE"],
     allowedHeaders: [
       "Content-Type",
