@@ -23,6 +23,7 @@ import MercadoPagoReturnPage from './pages/shopping-view/mercadoPagoReturn.jsx';
 import PaymentSuccessPage from './pages/shopping-view/paymentSuccess.jsx';
 import SearchProducts from './pages/shopping-view/search.jsx';
 
+
 const App = () => {
 
 const {isAuthenticated, user, isLoading} = useSelector((state) => state.auth);
