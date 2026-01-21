@@ -2,6 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cookieParser = require("cookie-parser");
 const cors = require("cors");
+
 require('dotenv').config();
 
 const authRouter = require("./routes/auth/auth.routes.js");
@@ -19,7 +20,7 @@ const shopReviewRouter = require("./routes/shop/review.routes.js");
 const commonFeatureRouter = require("./routes/common/feature.routes.js");
 
 mongoose
-  .connect(process.env.MONGO_URI)
+  .connect(process.env.MONGO_URL)
   .then(() => console.log("MongoDB Conenected"))
   .catch((error) => console.log(error));
 
@@ -31,7 +32,7 @@ const PORT = process.env.PORT || 5000;
 
 app.use(
   cors({
-    origin : ["https://sendasalud.cloud/"],
+    origin : process.env.CLIENT_BASE_URL,
     methods: ["GET", "POST", "PUT", "DELETE"],
     allowedHeaders: [
       "Content-Type",
