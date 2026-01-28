@@ -30,7 +30,7 @@ const app = express();
 
 const PORT = process.env.PORT || 5000;
 
-app.use(
+/*app.use(
   cors({
     origin : process.env.CLIENT_URL,
     methods: ["GET", "POST", "PUT", "DELETE"],
@@ -43,7 +43,7 @@ app.use(
     ],
     credentials: true,
   })
-);
+);*/
 
 app.use(cookieParser());
 app.use(express.json());
