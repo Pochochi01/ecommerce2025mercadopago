@@ -30,9 +30,22 @@ const app = express();
 
 const PORT = process.env.PORT || 5000;
 
-/*app.use(
+
+
+const allowedOrigins = [
+  "http://localhost:5173",           // desarrollo
+  process.env.CLIENT_URL,            // producción (ej. https://midominio.com)
+];
+
+app.use(
   cors({
-    origin : process.env.CLIENT_URL,
+    origin: function (origin, callback) {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error("No permitido por CORS"));
+      }
+    },
     methods: ["GET", "POST", "PUT", "DELETE"],
     allowedHeaders: [
       "Content-Type",
@@ -43,7 +56,10 @@ const PORT = process.env.PORT || 5000;
     ],
     credentials: true,
   })
-);*/
+);
+
+
+
 
 app.use(cookieParser());
 app.use(express.json());
