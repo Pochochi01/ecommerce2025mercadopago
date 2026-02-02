@@ -37,18 +37,28 @@ const allowedOrigins = [
   process.env.CLIENT_URL,            // producción (ej. https://midominio.com)
 ];
 
-app.use(
+
+app.use(cors({
+  origin: function (origin, callback) {
+    console.log("Origin recibido:", origin);
+    callback(null, true); // para testear, aceptar todo
+  },
+  credentials: true
+}));
+
+/*app.use(
   cors({
+    
     origin: ["http://localhost:5173", "https://sendasalud.cloud"],
-   /* methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allowedHeaders: [
       "Content-Type",
       "Authorization",
       "Cache-Control",
       "Expires",
       "Pragma",
-    ],*/
-    credentials: true,
+    ],
+    credentials: true,*/
   })
 );
 
