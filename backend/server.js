@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const cookieParser = require("cookie-parser");
 const cors = require("cors");
 
-require('dotenv').config();
+require("dotenv").config();
 
 const authRouter = require("./routes/auth/auth.routes.js");
 
@@ -28,20 +28,17 @@ const app = express();
 
 const PORT = process.env.PORT || 5000;
 
-
 const allowedOrigins = [
-  "https://localhost:5173",           // desarrollo
-  process.env.CLIENT_URL,            // producción (ej. https://midominio.com)
+  "https://localhost:5173", // desarrollo
+  process.env.CLIENT_URL, // producción (ej. https://midominio.com)
 ];
-
 
 app.use(
   cors({
-  origin: "https://sendasalud.cloud",
-  credentials: true
-})
+    origin: "https://sendasalud.cloud",
+    credentials: true,
+  })
 );
-
 
 app.use(cookieParser());
 app.use(express.json());
@@ -49,7 +46,6 @@ app.use(express.json());
 app.use("/api/auth", authRouter);
 app.use("/api/admin/products", adminProductsRouter);
 app.use("/api/admin/orders", adminOrderRouter);
-
 
 app.use("/api/shop/products", shopProductsRouter);
 app.use("/api/shop/cart", shopCartRouter);
