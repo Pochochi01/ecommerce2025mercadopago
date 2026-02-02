@@ -48,7 +48,6 @@ app.use(cors({
 
 /*app.use(
   cors({
-    
     origin: ["http://localhost:5173", "https://sendasalud.cloud"],
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allowedHeaders: [
