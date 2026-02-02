@@ -24,8 +24,6 @@ export const registerUser = createAsyncThunk(
 export const loginUser = createAsyncThunk(
     "/auth/login",
     async (formData) => {
-      console.log(import.meta.env.VITE_API_URL);
-      console.log(`${import.meta.env.VITE_API_URL}/api/auth/login`);
       const response = await axios.post(
         `${import.meta.env.VITE_API_URL}/api/auth/login`,
         formData,
