@@ -40,14 +40,14 @@ const allowedOrigins = [
 app.use(
   cors({
     origin: ["http://localhost:5173", "https://sendasalud.cloud"],
-    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+   /* methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allowedHeaders: [
       "Content-Type",
       "Authorization",
       "Cache-Control",
       "Expires",
       "Pragma",
-    ],
+    ],*/
     credentials: true,
   })
 );
