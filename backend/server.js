@@ -33,19 +33,13 @@ const PORT = process.env.PORT || 5000;
 
 
 const allowedOrigins = [
-  "http://localhost:5173",           // desarrollo
+  "https://",           // desarrollo
   process.env.CLIENT_URL,            // producción (ej. https://midominio.com)
 ];
 
 app.use(
   cors({
-    origin: function (origin, callback) {
-      if (!origin || allowedOrigins.includes(origin)) {
-        callback(null, true);
-      } else {
-        callback(new Error("No permitido por CORS"));
-      }
-    },
+    origin: ["http://localhost:5173", "https://sendasalud.cloud"],
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allowedHeaders: [
       "Content-Type",
