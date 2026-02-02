@@ -26,25 +26,21 @@ mongoose
 
 const app = express();
 
-
-
 const PORT = process.env.PORT || 5000;
 
 
-
 const allowedOrigins = [
-  "https://",           // desarrollo
+  "https://localhost:5173",           // desarrollo
   process.env.CLIENT_URL,            // producción (ej. https://midominio.com)
 ];
 
 
-app.use(cors({
-  origin: function (origin, callback) {
-    console.log("Origin recibido:", origin);
-    callback(null, true); // para testear, aceptar todo
-  },
+app.use(
+  cors({
+  origin: "https://sendasalud.cloud",
   credentials: true
-}));
+})
+);
 
 
 app.use(cookieParser());
