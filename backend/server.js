@@ -28,14 +28,18 @@ const app = express();
 
 const PORT = process.env.PORT || 5000;
 
-const allowedOrigins = [
-  "https://localhost:5173", // desarrollo
-  process.env.CLIENT_URL, // producción (ej. https://midominio.com)
-];
 
 app.use(
   cors({
     origin: "https://sendasalud.cloud",
+    methods: ["GET", "POST", "DELETE", "PUT"],
+    allowedHeaders: [
+      "Content-Type",
+      "Authorization",
+      "Cache-Control",
+      "Expires",
+      "Pragma",
+    ],
     credentials: true,
   })
 );
